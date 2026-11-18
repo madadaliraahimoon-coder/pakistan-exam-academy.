@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pakistan Exam Academy – Prepare Smart. Practice More. Achieve Success.</title>
+<meta name="description" content="Free preparation for FPSC, SPSC, NTS, STS, IBA Sukkur, PPSC, FIA, PST and JEST one paper tests: MCQ practice, mock tests and progress tracking.">
+<style>
+:root{--navy:#0b2447;--navy2:#19376d;--gold:#c9a227;--bg:#f5f7fb;--card:#fff;--tx:#14213d;--mut:#5b6784;--bd:#dfe4ee;--ok:#1b8a4b;--bad:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a1424;--card:#12203a;--tx:#e9eefb;--mut:#9fb0d0;--bd:#25385c;--navy:#07142b}}
+:root[data-theme=dark]{--bg:#0a1424;--card:#12203a;--tx:#e9eefb;--mut:#9fb0d0;--bd:#25385c;--navy:#07142b}
+*{box-sizing:border-box}html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Georgia,"Times New Roman",serif}
+h1,h2,h3,nav,button,.ui{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:10}
+header{background:var(--navy);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:9}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.logo{font:700 18px system-ui;color:#fff;text-decoration:none}.logo b{color:var(--gold)}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+nav a{color:#cdd8f2;text-decoration:none;padding:6px 10px;border-radius:8px;font-size:14px;white-space:nowrap}
+nav a.on,nav a:hover{background:var(--navy2);color:#fff}
+#th{background:none;border:1px solid #ffffff55;color:#fff;border-radius:8px;padding:4px 8px;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:16px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:16px;padding:28px 22px;border-bottom:4px solid var(--gold)}
+.hero h1{margin:0 0 6px;font-size:clamp(24px,5vw,38px)}.hero p{margin:4px 0 14px;color:#dbe4fa}
+.btn{background:var(--gold);color:#1a1400;border:0;border-radius:10px;padding:10px 16px;font:600 15px system-ui;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:transparent;border:1px solid var(--gold);color:var(--gold)}.btn.sm{padding:6px 10px;font-size:13px}
+.btn:disabled{opacity:.4;cursor:default}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin:12px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.card h3{margin:0 0 4px;font-size:16px}.mut{color:var(--mut);font-size:14px}
+h2{font-size:22px;margin:24px 0 6px;border-left:4px solid var(--gold);padding-left:10px}
+a.card{color:inherit;text-decoration:none}a.card:hover{border-color:var(--gold)}
+.ico{font-size:26px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;margin:6px 0;font:15px system-ui;cursor:pointer}
+.opt.sel{border-color:var(--gold);background:#c9a22722}.opt.ok{border-color:var(--ok);background:#1b8a4b22}.opt.bad{border-color:var(--bad);background:#c0392b22}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.nav button{width:36px;height:36px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;font:13px system-ui}
+.nav button.ans{background:var(--navy2);color:#fff}.nav button.cur{outline:2px solid var(--gold)}
+.timer{font:700 20px system-ui;color:var(--gold);background:var(--navy);padding:4px 12px;border-radius:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.bar2{height:10px;background:var(--bd);border-radius:6px;overflow:hidden}.bar2>i{display:block;height:100%;background:var(--gold)}
+table{width:100%;border-collapse:collapse;font:14px system-ui}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left}
+.wrap{overflow-x:auto}.tag{background:var(--navy2);color:#fff;border-radius:6px;padding:1px 8px;font:12px system-ui}
+.note{border-left:4px solid var(--gold);background:var(--card);padding:10px 14px;border-radius:8px;font-size:14px}
+footer{text-align:center;color:var(--mut);padding:24px 16px;font:13px system-ui}
+</style></head><body>
+<header><div class="bar"><a class="logo" href="#home">🎓 Pakistan <b>Exam Academy</b></a><nav id="nav"></nav><button id="th" aria-label="Toggle theme">◐</button></div></header>
+<main id="app"></main>
+<footer>Pakistan Exam Academy · Free for every student · Always confirm vacancy details on the official website.</footer>
+<script>
+/* ===== DATA (edit these arrays to expand the site) ===== */
+const SUBJECTS={english:["English","📖","Grammar, vocabulary, synonyms/antonyms, comprehension."],gk:["General Knowledge","🌍","Geography, world facts, organizations."],pak:["Pakistan Affairs","🇵🇰","History, constitution, geography."],current:["Current Affairs","📰","National and international events."],islamic:["Islamic Studies","🕌","Quran, Seerah, Islamic history."],science:["Everyday Science","🔬","Biology, physics, chemistry in daily life."],math:["Mathematics","➗","Arithmetic, percentages, series."],reason:["Analytical Reasoning","🧩","Logic, series, relations."],computer:["Computer Knowledge","💻","Basics, hardware, software, shortcuts."],sindhi:["Sindhi General Knowledge","🏺","Sindh history, culture, literature."]};
+/* [subject, question, options, correct index, explanation] – original practice items on well-established facts, NOT past-paper questions */
+const Q=[
+["pak","The Pakistan Resolution was passed at Lahore in which year?",["1930","1940","1947","1935"],1,"Passed 23 March 1940 at the Muslim League session."],
+["pak","The present Constitution of Pakistan was adopted in:",["1956","1962","1973","1985"],2,"The 1973 Constitution is the current one."],
+["pak","The national anthem’s lyrics were written by:",["Allama Iqbal","Hafeez Jalandhari","Faiz Ahmed Faiz","Ahmed Faraz"],1,"Music by Ahmed G. Chagla; lyrics by Hafeez Jalandhari."],
+["gk","The capital city of Pakistan is:",["Karachi","Lahore","Islamabad","Quetta"],2,"Islamabad has been the capital since the 1960s."],
+["gk","The longest river of Pakistan is the:",["Jhelum","Indus","Ravi","Chenab"],1,"The Indus runs the whole length of the country."],
+["gk","The largest province of Pakistan by area is:",["Punjab","Sindh","Balochistan","KPK"],2,"Balochistan covers about 44% of the country."],
+["gk","K2, in Pakistan, is the world’s ___ highest mountain.",["First","Second","Third","Fourth"],1,"K2 is second only to Mount Everest."],
+["islamic","How many Surahs are there in the Holy Quran?",["110","112","114","116"],2,"The Quran has 114 Surahs."],
+["islamic","Which Surah’s first verses were revealed first?",["Al-Fatiha","Al-Alaq","Al-Baqarah","Al-Ikhlas"],1,"Surah Al-Alaq (Iqra) in the Cave of Hira."],
+["science","The chemical symbol of sodium is:",["S","So","Na","Sd"],2,"Na comes from the Latin natrium."],
+["science","The powerhouse of the cell is the:",["Nucleus","Mitochondria","Ribosome","Vacuole"],1,"Mitochondria produce most of the cell’s ATP."],
+["science","Sunlight helps the human body make which vitamin?",["A","C","D","K"],2,"Skin synthesizes vitamin D under sunlight."],
+["science","Water boils at sea level at:",["90°C","100°C","110°C","120°C"],1,"100°C at standard pressure."],
+["math","15% of 200 is:",["20","25","30","35"],2,"200 × 15/100 = 30."],
+["math","The square root of 144 is:",["10","11","12","14"],2,"12 × 12 = 144."],
+["math","Next number in 2, 4, 8, 16, …",["24","32","30","20"],1,"Each term doubles."],
+["english","Synonym of ‘abundant’:",["Scarce","Plentiful","Tiny","Rare"],1,"Abundant = existing in large quantities."],
+["english","Antonym of ‘ancient’:",["Old","Modern","Historic","Aged"],1,"Ancient is the opposite of modern."],
+["english","Plural of ‘child’ is:",["Childs","Childes","Children","Childrens"],2,"Irregular plural."],
+["english","She ___ to school every day.",["go","goes","going","gone"],1,"Third person singular takes -es."],
+["computer","CPU stands for:",["Central Processing Unit","Computer Personal Unit","Central Program Utility","Core Process Unit"],0,"The CPU is the computer’s main processor."],
+["computer","The shortcut Ctrl + C is used to:",["Cut","Copy","Close","Create"],1,"Ctrl + X cuts, Ctrl + V pastes."],
+["sindhi","Mohenjo-daro is located in which province?",["Punjab","Sindh","Balochistan","KPK"],1,"It is an Indus Valley site in Sindh."],
+["sindhi","‘Shah Jo Risalo’ is the work of:",["Sachal Sarmast","Shah Abdul Latif Bhittai","Shaikh Ayaz","Bedil"],1,"Compiled poetry of Shah Abdul Latif Bhittai."],
+["reason","If A > B and B > C, then:",["C > A","A > C","A = C","B > A"],1,"Transitivity of inequality."],
+["pak","The first Governor-General of Pakistan was:",["Liaquat Ali Khan","Muhammad Ali Jinnah","Khawaja Nazimuddin","Iskander Mirza"],1,"Jinnah took the oath in August 1947."],
+["pak","The first Prime Minister of Pakistan was:",["Liaquat Ali Khan","Muhammad Ali Jinnah","Chaudhry Muhammad Ali","H. S. Suhrawardy"],0,"Liaquat Ali Khan served 1947-1951."],
+["pak","Pakistan came into being on:",["14 August 1947","23 March 1940","15 August 1947","11 September 1948"],0,"Independence Day is 14 August."],
+["pak","Allama Iqbal delivered the Allahabad Address in:",["1920","1930","1940","1947"],1,"It was delivered in December 1930."],
+["pak","The Objectives Resolution was passed in:",["1947","1949","1956","1962"],1,"Passed by the Constituent Assembly in March 1949."],
+["pak","Pakistan’s first Constitution was enforced in:",["1947","1952","1956","1962"],2,"The 1956 Constitution made Pakistan a republic."],
+["pak","The national language of Pakistan is:",["Urdu","Punjabi","Sindhi","English"],0,"Urdu is the national language."],
+["pak","Quaid-e-Azam Muhammad Ali Jinnah was born in:",["Lahore","Karachi","Delhi","Hyderabad"],1,"Born 25 December 1876 in Karachi."],
+["pak","The national poet of Pakistan is:",["Allama Iqbal","Faiz Ahmed Faiz","Mirza Ghalib","Altaf Hussain Hali"],0,"Iqbal is called the poet of the East."],
+["gk","The largest city of Pakistan by population is:",["Lahore","Karachi","Faisalabad","Islamabad"],1,"Karachi is the largest city."],
+["gk","The highest peak in Pakistan is:",["Nanga Parbat","K2","Tirich Mir","Rakaposhi"],1,"K2 is 8,611 m high."],
+["gk","The largest ocean in the world is the:",["Atlantic","Indian","Pacific","Arctic"],2,"The Pacific covers about a third of Earth."],
+["gk","The number of continents is:",["5","6","7","8"],2,"Seven continents."],
+["gk","The capital of Japan is:",["Osaka","Kyoto","Tokyo","Seoul"],2,"Tokyo is Japan’s capital."],
+["gk","The largest hot desert in the world is the:",["Gobi","Sahara","Thar","Kalahari"],1,"The Sahara is in North Africa."],
+["gk","The headquarters of the United Nations is in:",["Geneva","New York","Paris","London"],1,"UN headquarters is in New York City."],
+["gk","The currency of Japan is the:",["Won","Yuan","Yen","Ringgit"],2,"The yen."],
+["gk","The national animal of Pakistan is the:",["Snow leopard","Markhor","Lion","Tiger"],1,"The markhor is the national animal."],
+["gk","The national flower of Pakistan is:",["Rose","Jasmine","Tulip","Lotus"],1,"Jasmine (Chambeli)."],
+["islamic","The number of daily obligatory prayers is:",["3","4","5","6"],2,"Five daily prayers."],
+["islamic","The number of pillars of Islam is:",["4","5","6","7"],1,"Five pillars."],
+["islamic","The month of fasting is:",["Shaban","Ramadan","Shawwal","Rajab"],1,"Fasting is in Ramadan."],
+["islamic","The longest Surah of the Quran is:",["Al-Imran","Al-Baqarah","An-Nisa","Al-Maidah"],1,"Al-Baqarah has 286 verses."],
+["islamic","The first Caliph of Islam was:",["Hazrat Umar","Hazrat Abu Bakr","Hazrat Uthman","Hazrat Ali"],1,"Hazrat Abu Bakr (RA)."],
+["islamic","The Prophet (PBUH) was born in:",["Madinah","Makkah","Taif","Jerusalem"],1,"Born in Makkah."],
+["islamic","The number of Paras (Juz) in the Quran is:",["20","25","30","40"],2,"Thirty Paras."],
+["islamic","Hajj is performed in the month of:",["Muharram","Rajab","Dhul Hijjah","Safar"],2,"Hajj takes place in Dhul Hijjah."],
+["science","The chemical formula of water is:",["HO2","H2O","H2O2","OH"],1,"Two hydrogen, one oxygen."],
+["science","Plants absorb which gas for photosynthesis?",["Oxygen","Carbon dioxide","Nitrogen","Hydrogen"],1,"They take in CO2."],
+["science","The largest organ of the human body is the:",["Liver","Skin","Lungs","Heart"],1,"The skin."],
+["science","The SI unit of force is the:",["Joule","Newton","Watt","Pascal"],1,"Newton (N)."],
+["science","Which blood group is a universal donor?",["A","B","AB","O"],3,"O-negative red cells suit all groups."],
+["science","The planet nearest to the Sun is:",["Venus","Mercury","Earth","Mars"],1,"Mercury."],
+["science","The speed of light is about:",["3 × 10^6 m/s","3 × 10^8 m/s","3 × 10^10 m/s","3 × 10^5 m/s"],1,"About 300,000 km/s."],
+["science","The hardest natural substance is:",["Gold","Iron","Diamond","Quartz"],2,"Diamond."],
+["science","The most abundant gas in Earth’s atmosphere is:",["Oxygen","Nitrogen","Carbon dioxide","Argon"],1,"About 78% nitrogen."],
+["science","Deficiency of which vitamin causes scurvy?",["A","B","C","D"],2,"Vitamin C."],
+["math","25 × 12 =",["250","275","300","325"],2,"25 × 12 = 300."],
+["math","20% of 150 is:",["20","25","30","35"],2,"150 × 20/100 = 30."],
+["math","The LCM of 4 and 6 is:",["10","12","18","24"],1,"Smallest common multiple is 12."],
+["math","The HCF of 12 and 18 is:",["2","3","6","9"],2,"Largest common factor is 6."],
+["math","7 squared is:",["14","42","49","77"],2,"7 × 7 = 49."],
+["math","The sum of the angles of a triangle is:",["90°","180°","270°","360°"],1,"180 degrees."],
+["math","The area of a rectangle 8 by 5 is:",["13","26","40","45"],2,"8 × 5 = 40."],
+["math","1/2 + 1/4 =",["2/6","3/4","1/6","2/4"],1,"2/4 + 1/4 = 3/4."],
+["math","Next number in 3, 6, 9, 12, …",["14","15","16","18"],1,"Add 3 each time."],
+["math","If x + 7 = 15, then x =",["6","7","8","9"],2,"15 - 7 = 8."],
+["math","Simple interest on 1000 at 10% for 2 years is:",["100","200","210","220"],1,"1000 × 10% × 2 = 200."],
+["math","The average of 2, 4, 6, 8, 10 is:",["5","6","7","8"],1,"Sum 30 divided by 5 = 6."],
+["english","Synonym of ‘brave’:",["Timid","Courageous","Weak","Lazy"],1,"Brave = courageous."],
+["english","Antonym of ‘generous’:",["Kind","Stingy","Rich","Polite"],1,"Generous is the opposite of stingy."],
+["english","Past tense of ‘write’ is:",["Writed","Wrote","Written","Writes"],1,"Wrote (past participle: written)."],
+["english","Choose the correct spelling:",["Recieve","Receive","Receeve","Receve"],1,"I before E except after C."],
+["english","He carried ___ umbrella.",["a","an","the","no article"],1,"‘An’ before a vowel sound."],
+["english","Plural of ‘mouse’ is:",["Mouses","Mice","Mouse","Meese"],1,"Irregular plural."],
+["english","Opposite of ‘victory’:",["Triumph","Defeat","Success","Win"],1,"Defeat."],
+["english","He is taller ___ his brother.",["then","than","that","as"],1,"Use ‘than’ for comparison."],
+["english","Synonym of ‘rapid’:",["Slow","Quick","Late","Calm"],1,"Rapid = quick."],
+["english","Which word is a noun?",["Run","Happiness","Quickly","Beautiful"],1,"Happiness names a thing or feeling."],
+["computer","RAM stands for:",["Read Access Memory","Random Access Memory","Rapid Access Machine","Run Access Memory"],1,"Random Access Memory."],
+["computer","The shortcut Ctrl + V is used to:",["Cut","Copy","Paste","Undo"],2,"Paste."],
+["computer","Which is an input device?",["Monitor","Printer","Keyboard","Speaker"],2,"The keyboard."],
+["computer","The brain of the computer is the:",["Monitor","CPU","Mouse","Printer"],1,"The CPU."],
+["computer","One byte equals how many bits?",["4","8","16","32"],1,"8 bits."],
+["computer","The shortcut Ctrl + Z is used to:",["Redo","Undo","Save","Print"],1,"Undo."],
+["sindhi","The capital of Sindh province is:",["Hyderabad","Karachi","Sukkur","Larkana"],1,"Karachi."],
+["sindhi","Sukkur Barrage is built on the river:",["Ravi","Indus","Jhelum","Sutlej"],1,"The Indus."],
+["sindhi","The name ‘Mohenjo-daro’ is commonly translated as:",["Mound of the Dead","City of Kings","Hill of Gold","Land of Rivers"],0,"Mound of the Dead."],
+["sindhi","In Pakistan, Sindhi is mainly written in which script?",["Devanagari","Perso-Arabic","Latin","Gurmukhi"],1,"Perso-Arabic script."],
+["sindhi","Keenjhar Lake is in which district?",["Sukkur","Thatta","Larkana","Hyderabad"],1,"Thatta district."],
+["sindhi","Mazar-e-Quaid is located in:",["Lahore","Karachi","Islamabad","Quetta"],1,"Karachi."],
+["reason","Find the odd one out:",["Apple","Mango","Potato","Banana"],2,"Potato is a vegetable; the rest are fruits."],
+["reason","Next number in 2, 6, 12, 20, …",["28","30","32","36"],1,"Differences 4, 6, 8, then 10."],
+["reason","Pen is to write as knife is to:",["Eat","Cut","Cook","Hold"],1,"A knife is used to cut."],
+["reason","Find the odd number out: 4, 6, 9, 8",["4","6","9","8"],2,"9 is odd; the rest are even."]];
+const EXAMS=["FPSC","SPSC","NTS","STS","IBA Sukkur","Sindh Govt Jobs","PST & JEST","FIA","PPSC","Other Govt Tests"];
+const PORTALS={FPSC:"https://www.fpsc.gov.pk",SPSC:"https://www.spsc.gov.pk",NTS:"https://www.nts.org.pk",STS:"https://www.sts.org.pk","IBA Sukkur":"https://www.iba-suk.edu.pk",FIA:"https://www.fia.gov.pk",PPSC:"https://ppsc.gop.pk"};
+/* Add REAL verified ads only: {dept,post,qual,age,last,how,link} */
+const JOBS=[];
+const VOCAB=[["Benevolent","Kind and generous"],["Diligent","Hard-working and careful"],["Candid","Honest and frank"],["Prudent","Wise and careful"],["Resilient","Able to recover quickly"],["Meticulous","Very careful about details"],["Eloquent","Fluent and persuasive in speech"]];
+const FACTS=["Light travels faster than sound.","The human body has 206 bones in adulthood.","Oxygen makes up about 21% of air.","Plants take in carbon dioxide for photosynthesis.","The heart has four chambers.","Water is made of hydrogen and oxygen.","Sound cannot travel through a vacuum."];
+const MATHD=[["A shirt costs 800. After 25% discount the price is?","600"],["Average of 10, 20, 30, 40?","25"],["If 3x + 5 = 20, x = ?","5"],["Perimeter of a square with side 7?","28"],["What is 12 × 15?","180"]];
+/* ===== HELPERS ===== */
+const $=s=>document.querySelector(s),app=$("#app");
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const day=()=>Math.floor(Date.now()/864e5);
+const LINKS=[["home","Home"],["subjects","Subjects"],["mock","Mock Test"],["papers","Past Papers"],["jobs","Jobs"],["daily","Daily"],["material","Material"],["dashboard","Dashboard"],["about","About"]];
+$("#nav").innerHTML=LINKS.map(l=>`<a href="#${l[0]}" data-r="${l[0]}">${l[1]}</a>`).join("");
+$("#th").onclick=()=>{const r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"};
+let T=null,tick=null;
+function stopT(){clearInterval(tick);tick=null}
+/* ===== QUIZ ENGINE ===== */
+function startQuiz(pool,title,mins,key){stopT();const qs=shuf(pool).slice(0,100);T={qs,ans:Array(qs.length).fill(-1),i:0,title,key,end:mins?Date.now()+mins*6e4:0,done:false};
+ if(mins)tick=setInterval(()=>{const left=T.end-Date.now();const el=$("#tm");if(left<=0){submit()}else if(el)el.textContent=fmt(left)},500);drawQ()}
+const fmt=ms=>{const s=Math.max(0,ms/1000|0);return String(s/60|0).padStart(2,"0")+":"+String(s%60).padStart(2,"0")};
+function drawQ(){const q=T.qs[T.i];location.hash.startsWith("#run")||history.replaceState(null,"","#run");
+ app.innerHTML=`<div class="row"><h2 style="margin:0">${esc(T.title)}</h2>${T.end?`<span class="timer" id="tm">${fmt(T.end-Date.now())}</span>`:""}</div>
+ <div class="card"><div class="mut ui">Question ${T.i+1} of ${T.qs.length} · <span class="tag">${SUBJECTS[q[0]][0]}</span></div><h3 style="font-size:18px;margin:10px 0">${esc(q[1])}</h3>
+ ${q[2].map((o,k)=>`<button class="opt ${T.ans[T.i]===k?"sel":""}" data-k="${k}">${"ABCD"[k]}. ${esc(o)}</button>`).join("")}</div>
+ <div class="row" style="margin:10px 0"><button class="btn alt sm" id="pv" ${T.i?"":"disabled"}>← Previous</button><button class="btn sm" id="nx" ${T.i<T.qs.length-1?"":"disabled"}>Next →</button></div>
+ <div class="nav">${T.qs.map((_,k)=>`<button class="${T.ans[k]>=0?"ans":""} ${k===T.i?"cur":""}" data-n="${k}" aria-label="Go to question ${k+1}">${k+1}</button>`).join("")}</div>
+ <button class="btn" id="sb">Submit examination</button>`;
+ app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{T.ans[T.i]=+b.dataset.k;drawQ()});
+ app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>{T.i=+b.dataset.n;drawQ()});
+ $("#pv").onclick=()=>{T.i--;drawQ()};$("#nx").onclick=()=>{T.i++;drawQ()};
+ $("#sb").onclick=()=>{const un=T.ans.filter(a=>a<0).length;if(!un||confirm(un+" question(s) unanswered. Submit anyway?"))submit()}}
+function submit(){if(!T||T.done)return;T.done=true;stopT();let c=0;const by={};
+ T.qs.forEach((q,i)=>{const s=by[q[0]]=by[q[0]]||[0,0];s[1]++;if(T.ans[i]===q[3]){c++;s[0]++}});
+ const n=T.qs.length,pct=Math.round(c/n*100);
+ const h=store.get("hist",[]);h.push({t:T.title,d:new Date().toISOString().slice(0,10),c,n,by});store.set("hist",h.slice(-100));
+ app.innerHTML=`<h2>Result: ${esc(T.title)}</h2><div class="card"><h1 style="margin:0">${c} / ${n} <span class="mut">(${pct}%)</span></h1>
+ <p class="mut">Correct ${c} · Incorrect ${T.ans.filter((a,i)=>a>=0&&a!==T.qs[i][3]).length} · Skipped ${T.ans.filter(a=>a<0).length}</p></div>
+ <h2>Performance analysis</h2><div class="card">${Object.entries(by).map(([k,v])=>`<p class="ui" style="margin:8px 0 2px">${SUBJECTS[k][0]} — ${v[0]}/${v[1]}</p><div class="bar2"><i style="width:${v[0]/v[1]*100}%"></i></div>`).join("")}</div>
+ <h2>Review &amp; explanations</h2>${T.qs.map((q,i)=>`<div class="card" style="margin:8px 0"><b>${i+1}. ${esc(q[1])}</b>${q[2].map((o,k)=>`<div class="opt ${k===q[3]?"ok":k===T.ans[i]?"bad":""}">${"ABCD"[k]}. ${esc(o)}${k===q[3]?" ✓":k===T.ans[i]?" ✗ (your answer)":""}</div>`).join("")}<p class="mut">💡 ${esc(q[4])}</p></div>`).join("")}
+ <a class="btn" href="#dashboard">Open dashboard</a> <a class="btn alt" href="#mock">New test</a>`;scrollTo(0,0)}
+/* ===== PAGES ===== */
+const pages={
+home(){const h=store.get("hist",[]);return `<div class="hero"><h1>Pakistan Exam Academy</h1><p>Prepare Smart. Practice More. Achieve Success.</p><p>Free preparation for one-paper jobs: FPSC, SPSC, NTS, STS, IBA Sukkur, PPSC, FIA, PST &amp; JEST and more.</p><a class="btn" href="#mock">Start a mock test</a> <a class="btn alt" href="#daily">Daily practice</a></div>
+ <h2>Latest government job updates</h2><div class="note">Job ads are never shown unless verified. See <a href="#jobs">Jobs</a> for official portals.</div>
+ <h2>Popular examinations</h2><div class="grid">${EXAMS.map(e=>`<a class="card" href="#papers"><h3>${e}</h3><span class="mut">Resources &amp; official links</span></a>`).join("")}</div>
+ <h2>Free preparation resources</h2><div class="grid"><a class="card" href="#subjects"><div class="ico">📚</div><h3>10 subjects</h3><span class="mut">Quizzes by subject</span></a><a class="card" href="#material"><div class="ico">📄</div><h3>Study material</h3><span class="mut">Revision sheet download</span></a><a class="card" href="#daily"><div class="ico">⚡</div><h3>Daily MCQ challenge</h3><span class="mut">Fresh set every day</span></a></div>
+ <h2>Your dashboard</h2><div class="card">${h.length?`Tests taken: <b>${h.length}</b> · Last score: <b>${h.at(-1).c}/${h.at(-1).n}</b> · <a href="#dashboard">View progress</a>`:`No tests yet. <a href="#mock">Take your first mock test</a>.`}</div>
+ <h2>Recent mock tests</h2><div class="card">${h.slice(-3).reverse().map(x=>`${esc(x.t)} — ${x.c}/${x.n} (${x.d})<br>`).join("")||"<span class='mut'>Nothing yet.</span>"}</div>`},
+subjects(){return `<h2>Subject-wise preparation</h2><div class="grid">${Object.entries(SUBJECTS).map(([k,v])=>`<a class="card" href="#sub-${k}"><div class="ico">${v[1]}</div><h3>${v[0]}</h3><span class="mut">${v[2]}</span></a>`).join("")}</div>`},
+sub(k){const s=SUBJECTS[k];if(!s)return pages.subjects();const pool=Q.filter(q=>q[0]===k);
+ return `<h2>${s[1]} ${s[0]}</h2><p class="mut">${s[2]}</p><div class="grid">
+ <div class="card"><h3>Topic quiz</h3><p class="mut">${pool.length} practice MCQ(s) available</p><button class="btn sm" ${pool.length?"":"disabled"} data-quiz="${k}">Start quiz</button></div>
+ <div class="card"><h3>Important MCQs</h3><p class="mut">Review with explanations after any quiz.</p></div>
+ <div class="card"><h3>Notes</h3><p class="mut">Add your notes in the <code>SUBJECTS</code> data.</p></div>
+ <div class="card"><h3>Previous questions</h3><p class="mut">Add only verified papers. See <a href="#papers">Past Papers</a>.</p></div>
+ <div class="card"><h3>Practice exercises</h3><p class="mut">Use Daily Practice.</p></div></div>
+ ${k==="current"?'<div class="note">Current Affairs needs fresh, verified questions. Add them to the question bank regularly.</div>':""}`},
+mock(){return `<h2>Online mock test</h2><div class="card"><p>Up to 100 MCQs · 100-minute countdown · auto-marking · explanations · analysis.</p><p class="mut">The sample bank has ${Q.length} original practice questions, so a test uses all of them. Add more to <code>Q</code> and tests grow to 100 automatically.</p><button class="btn" id="go">Start mock test</button></div>`},
+papers(){return `<h2>Past papers</h2><div class="note">No papers are reproduced here to avoid inaccurate or unauthorised copies. Download genuine papers from official portals, or add verified ones to your own library.</div><div class="grid">${["FPSC","SPSC","NTS","STS","IBA Sukkur","PST & JEST"].map(e=>`<div class="card"><h3>${e} past papers</h3>${PORTALS[e]?`<a href="${PORTALS[e]}" target="_blank" rel="noopener">Official website ↗</a>`:`<span class="mut">Check the official education department / test-service notices.</span>`}</div>`).join("")}</div>`},
+jobs(){return `<h2>Job updates</h2>${JOBS.length?`<div class="wrap card"><table><tr><th>Department</th><th>Post</th><th>Qualification</th><th>Age</th><th>Last date</th><th>How to apply</th><th>Ad</th></tr>${JOBS.map(j=>`<tr><td>${esc(j.dept)}</td><td>${esc(j.post)}</td><td>${esc(j.qual)}</td><td>${esc(j.age)}</td><td>${esc(j.last)}</td><td>${esc(j.how)}</td><td><a href="${esc(j.link)}" target="_blank" rel="noopener">Official ↗</a></td></tr>`).join("")}</table></div>`:`<div class="note">No verified vacancies are loaded. Add real advertisements to the <code>JOBS</code> array (department, post, qualification, age, last date, procedure, official link). Until then, check these portals directly:</div>`}
+ <div class="grid">${Object.entries(PORTALS).map(([k,v])=>`<a class="card" href="${v}" target="_blank" rel="noopener"><h3>${k} ↗</h3><span class="mut">Official site</span></a>`).join("")}</div>`},
+daily(){const d=day(),qs=Array.from({length:Math.min(20,Q.length)},(_,i)=>Q[(d+i*7)%Q.length]);const s=new Set();const u=qs.filter(q=>!s.has(q)&&s.add(q));
+ return `<h2>Daily practice</h2><div class="grid"><div class="card"><h3>Daily MCQs</h3><p class="mut">${u.length} questions today</p><button class="btn sm" id="dq">Start</button></div><div class="card"><h3>Current affairs quiz</h3><p class="mut">Add verified items to the question bank.</p></div></div>
+ <h2>Vocabulary of the day</h2><div class="card"><b>${VOCAB[d%VOCAB.length][0]}</b> — ${VOCAB[d%VOCAB.length][1]}</div>
+ <h2>Maths question</h2><div class="card">${MATHD[d%MATHD.length][0]}<br><details><summary class="mut">Show answer</summary><b>${MATHD[d%MATHD.length][1]}</b></details></div>
+ <h2>Science fact</h2><div class="card">${FACTS[d%FACTS.length]}</div>`},
+material(){return `<h2>Study material</h2><div class="grid"><div class="card"><h3>Revision sheet</h3><p class="mut">All practice questions with answers and explanations.</p><button class="btn sm" id="dl">Download (.txt)</button></div><div class="card"><h3>Progress backup</h3><p class="mut">Save your results as a file.</p><button class="btn sm" id="dp">Download (.json)</button></div></div><div class="note">PDF notes, MCQ books and preparation guides: put your own or properly licensed files in a <code>/files</code> folder when hosting and link them here.</div>`},
+dashboard(){const h=store.get("hist",[]);if(!h.length)return `<h2>Study dashboard</h2><div class="card">No tests completed yet. <a href="#mock">Start one</a>.</div>`;
+ const agg={};h.forEach(x=>Object.entries(x.by).forEach(([k,v])=>{const a=agg[k]=agg[k]||[0,0];a[0]+=v[0];a[1]+=v[1]}));
+ const rows=Object.entries(agg).map(([k,v])=>[k,v[0]/v[1]*100]).sort((a,b)=>a[1]-b[1]);
+ return `<h2>Study dashboard</h2><div class="grid"><div class="card"><h3>${h.length}</h3><span class="mut">Tests completed</span></div><div class="card"><h3>${Math.round(h.reduce((s,x)=>s+x.c/x.n,0)/h.length*100)}%</h3><span class="mut">Average score</span></div><div class="card"><h3>${SUBJECTS[rows[0][0]][0]}</h3><span class="mut">Weakest subject (${Math.round(rows[0][1])}%)</span></div></div>
+ <h2>Subject accuracy</h2><div class="card">${rows.map(r=>`<p class="ui" style="margin:8px 0 2px">${SUBJECTS[r[0]][0]} — ${Math.round(r[1])}%</p><div class="bar2"><i style="width:${r[1]}%"></i></div>`).join("")}</div>
+ <h2>Completed tests</h2><div class="wrap card"><table><tr><th>Date</th><th>Test</th><th>Score</th></tr>${h.slice().reverse().map(x=>`<tr><td>${x.d}</td><td>${esc(x.t)}</td><td>${x.c}/${x.n}</td></tr>`).join("")}</table></div><p><button class="btn alt sm" id="rs">Reset progress</button></p>`},
+about(){return `<h2>About us</h2><div class="card"><p>Pakistan Exam Academy exists to provide free, accessible competitive-examination preparation for Pakistani students, with honest content: no fake job ads and no invented past papers.</p></div><h2>Contact</h2><div class="card"><p>Add your own contact email or social links here before publishing. Suggestions and corrections are welcome.</p></div>`}};
+/* ===== ROUTER ===== */
+function route(){stopT();T=null;const r=location.hash.slice(1)||"home";if(r==="run"){location.hash="#mock";return}
+ const base=r.startsWith("sub-")?"subjects":r;document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===base));
+ app.innerHTML=r.startsWith("sub-")?pages.sub(r.slice(4)):(pages[r]||pages.home)();bind();scrollTo(0,0)}
+function bind(){const q=s=>app.querySelector(s);
+ app.querySelectorAll("[data-quiz]").forEach(b=>b.onclick=()=>startQuiz(Q.filter(x=>x[0]===b.dataset.quiz),SUBJECTS[b.dataset.quiz][0]+" quiz",0));
+ q("#go")&&(q("#go").onclick=()=>startQuiz(Q,"Mock Test",100));
+ q("#dq")&&(q("#dq").onclick=()=>{const d=day();startQuiz(Array.from({length:Math.min(20,Q.length)},(_,i)=>Q[(d+i*7)%Q.length]),"Daily MCQs",0)});
+ const dl=(n,t,m)=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:m}));a.download=n;a.click()};
+ q("#dl")&&(q("#dl").onclick=()=>dl("revision-sheet.txt",Q.map((x,i)=>`${i+1}. [${SUBJECTS[x[0]][0]}] ${x[1]}\n   Answer: ${x[2][x[3]]}\n   ${x[4]}\n`).join("\n"),"text/plain"));
+ q("#dp")&&(q("#dp").onclick=()=>dl("progress.json",JSON.stringify(store.get("hist",[]),null,1),"application/json"));
+ q("#rs")&&(q("#rs").onclick=()=>{if(confirm("Delete all saved progress?")){store.set("hist",[]);route()}})}
+addEventListener("hashchange",()=>{if(location.hash!=="#run")route()});route();
+</script></body></html>
